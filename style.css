@@ -55,10 +55,13 @@ html{
     z-index: 3;
 }
 .header .logo {
-    margin: 20px;
     width: 170px;
 }
-.header .logo img {
+.footer .logo {
+    margin: 10px 0;
+    width: 120px;
+}
+.header .logo img, .footer .logo img {
     width: 100%;
 }
 .header ul {
@@ -622,6 +625,7 @@ input[type="button"]:hover {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     gap:1.5rem;
+    padding: 0 12rem;
 }
 
 .footer .box-container .box h3{
