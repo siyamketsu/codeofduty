@@ -3514,5 +3514,5 @@
 <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" stroke="#FFFFFF" stroke-miterlimit="10" d="M139.089,73.825
 	c0.77-1.374,1.522-2.714,2.202-3.926C139.111,68.569,138.246,69.762,139.089,73.825z"/>
 <rect x="206.366" y="38.829" fill-rule="evenodd" clip-rule="evenodd" fill="none" width="295" height="75"/>
-<text transform="matrix(1 0 0 1 206.3657 79.1382)"><tspan x="0" y="0" font-family="'Algerian'" font-size="58">YM  F</tspan><tspan x="154.714" y="0" font-family="'Algerian'" font-size="47">ARM</tspan></text>
+<text transform="matrix(1 0 0 1 206.3657 79.1382)" font-family="'Algerian'" font-size="58">YM Farm</text>
 </svg>

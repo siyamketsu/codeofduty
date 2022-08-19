@@ -52,6 +52,7 @@ html{
 .header.scroll-active {
     background-color: var(--white);
     box-shadow: var(--box-shadowing);
+    z-index: 3;
 }
 .header .logo {
     margin: 20px;
