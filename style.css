@@ -1,0 +1,962 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root{
+    --bg-black: #000000ef;
+    --green: #00af9d;
+    --hovergreen: #0e776c;
+    --box-shadowing: 0 2px 10px rgba(0, 0, 0, 0.738);
+    --border-color: #0000001a;
+    --pureblack: #000000;
+    --white: #f5f5f5;
+    --geryblack: #222323;
+    --light-color:#666;
+    --border:.2rem solid var(--border-color);
+    --outline:.1rem solid var(--border-color);
+    --outline-hover:.2rem solid var(--greyblack);
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    font-size: 15px;
+    transition: all .2s linear;
+    resize: none;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+.header{
+    height: 100px;
+    position: fixed;
+    top:0; left:0; right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 3;
+    padding: 2rem 9%;
+    background-color: transparent;
+    transition: all .3s ease-in-out;
+    box-shadow: none;
+    box-shadow: 0 1px 0 var(--geryblack);
+}
+.header-color{
+    background-color: var(--white);
+}
+.header.scroll-active {
+    background-color: var(--white);
+    box-shadow: var(--box-shadowing);
+}
+.header .logo {
+    margin: 20px;
+    width: 170px;
+}
+.header .logo img {
+    width: 100%;
+}
+.header ul {
+    display: flex;
+    list-style: none;
+}
+ul li {
+    padding: 0 20px;
+    cursor: pointer;
+}
+ul li a {
+    color: var(--white);
+    text-transform: uppercase;
+}
+.nav-icons li i {
+    font-size: 18px;
+}
+ul li a:hover, ul li i:hover{
+    color:var(--green);
+    transition: 0.3s;
+}
+
+.header .icons div{
+    color: var(--white);
+    font-size: 2rem;
+    margin-left: 25px;
+    cursor: pointer;
+}
+.head-page {
+    line-height: 1.5;
+    padding: 15rem 0 0;
+    min-height: 350px;  
+    background: linear-gradient(to right, #ffffffe2 20%, #ffffffc7);
+    height: 300px;
+    position: relative;
+}
+.head-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://oxford.emory.edu/_includes/images/sections/academics/farm_opener.jpg");
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+}
+.prod-head::before {
+    background-image: url(images/hay2.gif);
+}
+.about-head::before {
+    background-image: url(images/straw2.gif);
+}
+.head-page h1 {
+    font-size: 50px !important;
+    text-transform: uppercase;
+}
+.heading{
+    text-align: center;
+    padding:35px 0 20px;
+    color:var(--greyblack);
+}
+
+.heading span{
+    color:var(--green);
+    /* clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%); */
+}
+.heading, .heading span {
+    font-size: 30px;
+}
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding:.8rem 3rem;
+    font-size: 1.7rem;
+    border-radius: .5rem;
+    border:.2rem solid var(--greyblack);
+    color:var(--greyblack);
+    cursor: pointer;
+    background-color: var(--white);
+}
+
+.btn:hover{
+    background: var(--green);
+    color:#fff;
+}
+
+.header .icons div:hover{
+    background: var(--green);
+    color:#fff;
+}
+
+#menu-btn{
+    display: none;
+}
+
+
+/* ========================= SEARCH BOX, SHOPPING CART & LOGIN FORM ========================= */
+.search-form, .shopping-cart, .login-form{
+    position: absolute;
+    top: 130px; right: -100%;;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    width: 300px;
+    background-color: var(--white);
+    transition: .1s linear;
+    opacity: 0;
+    z-index: -1;
+}
+
+/* ------------------------------------------------ Try sell form ------------------------------*/
+.sell-buy-form {
+    width: 380px;
+    overflow: hidden;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px rgba(0,0,0,0.1);
+    transition: 0.5s;
+    padding: 15px;
+
+    margin: -41.3rem auto;
+    display: none;
+    position: relative;
+}
+.sell-buy-form {
+    width: 760px;
+}
+.log-close {
+    position: absolute;
+    top: 23px;
+    right: 10px;
+    font-size: 35px;
+    z-index: 2;
+    cursor: pointer;
+}
+.contact-us .box-container {
+    display: grid;
+    flex-wrap: initial;
+    justify-content: initial;
+}
+.sell-buy-form form, .contact-us .box-container form {
+    display: grid;
+    grid-gap: 0 30px;
+    grid-template-columns: 1fr 1fr;
+}
+.sell-buy-form form {
+    grid-template-rows: 0.2fr 0.2fr 0.2fr 0.2fr 0.4fr 0.2fr;
+    grid-template-areas: "h2 h2"
+    "fname lname"
+    "mail pnumber"
+    "radio-que radio"
+    "category1 category2"
+    "drop drop"
+    "btn btn"
+    ". .";
+}
+.contact-us .box-container form {
+    grid-template-rows: 0.2fr 0.2fr 0.2fr 0.4fr 0.2fr;
+    grid-template-areas: "h2 h2"
+    "fname mail"
+    "subject subject"
+    "msg msg"
+    "btn btn";
+}
+.sell-buy-form form h2, .contact-us .box-container form h1 {
+    grid-area: h2;
+}
+form .radio-que {
+    grid-area: radio-que;
+}
+form .radio-btn {
+    grid-area: radio;
+    display: flex;
+    justify-content: space-between;
+}
+.radio-btn input[type="radio"] {
+    padding: 0px !important;
+    appearance: none;
+    /* For iOS < 15 */
+    background-color: var(--form-background);
+    background-color: var(--white);
+    /* Not removed via appearance */
+    margin: 0;
+  
+    font: inherit;
+    color: currentColor;
+    width: 20px;
+    height: 20px;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    transform: translateY(-0.075em);
+  
+    display: grid;
+    place-content: center;
+}
+.radio-btn input[type="radio"]::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em #000000; 
+    /* Windows High Contrast Mode */
+    background-color: CanvasText;
+}
+.radio-btn input[type="radio"]:checked, .radio-btn input[type="radio"]:checked + label {
+    color: var(--green);
+}
+.radio-btn input[type="radio"]:checked::before {
+    transform: scale(1);
+    box-shadow: inset 1em 1em var(--green);
+}
+.radio-category {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 150px;
+    color: #222323;
+}
+form .fname {
+    grid-area: fname;
+}
+form .lname {
+    grid-area: lname;
+}
+form .mail {
+    grid-area: mail;
+}
+form .pnumber {
+    grid-area: pnumber;
+}
+form .category1 {
+    grid-area: category1;
+}
+form .category2 {
+    grid-area: category2;
+}
+form .drop-box {
+    grid-area: drop;
+    height: 160px;
+    width: 100%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 15px 0;
+    border: 2px dashed var(--geryblack);
+}
+form .drop-box i, .upload-file span {
+    color: var(--green);
+}
+.upload-file span:hover {
+    border-bottom: 1px solid var(--green);
+}
+form .sub-btn {
+    grid-area: btn;
+}
+form .msg {
+    grid-area: msg;
+}
+form .subject {
+    grid-area: subject;
+}
+form .msg {
+    grid-area: msg;
+}
+form .sub-btn {
+    grid-area: btn;
+}
+/* ----------------------------------------- End Try sell form ---------------------------------- */
+.search-form.active, .shopping-cart.active, .login-form.active {
+    transition: .3s linear;
+    right: 2rem;
+    opacity: 1;
+}
+
+/* ===================================== SEARCH BOX ===================================== */
+.search-form{
+    width: 500px;
+    height: 50px;
+    border: 2px solid var(--green);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+.search-form input{
+    height:100%;
+    width:100%;
+    background-color: transparent;
+    caret-color: var(--green);
+    padding:0 15px;
+}
+.search-form label{
+    font-size: 20px;
+    padding-right: 1.5rem;
+    color:var(--greyblack);
+    cursor: pointer;
+}
+.search-form label:hover{
+    color:var(--green);
+}
+
+/* ===================================== SHOPPING CART ===================================== */
+.shopping-cart, .login-form{
+    width: 340px;
+}
+.shopping-cart .box{
+    display: flex;
+    align-items: center;
+    gap:1rem;
+    position: relative;
+    margin:1rem 0;
+}
+.shopping-cart .box .fa-trash{
+    font-size: 2rem;
+    position: absolute;
+    top:50%; right:2rem;
+    cursor: pointer;
+    color:var(--light-color);
+    transform: translateY(-50%);
+}
+.shopping-cart .box img{
+    width: 90px;
+}
+.shopping-cart .box .fa-trash:hover{
+    color:var(--green);
+}
+.shopping-cart .box .content h3{
+    color:var(--greyblack);
+    font-size: 1.7rem;
+    padding-bottom: 1rem;
+}
+.shopping-cart .box .content span{
+    color:var(--light-color);
+    font-size: 1.6rem;
+}
+
+.shopping-cart .box .content .quantity{
+    padding-left: 1rem;
+}
+.shopping-cart .total{
+    font-size: 2.5rem;
+    padding:1rem 0;
+    text-align: center;
+    color:var(--greyblack);
+}
+.shopping-cart .btn{
+    display: block;
+    text-align: center;
+    margin:1rem;
+}
+
+/* =================================== LOGIN/SIGN UP FORM ==================================== */
+/* .sell-buy-form, */
+.login-form {
+    text-align: center;
+    height: 350px;
+    overflow: hidden;
+}
+.login-form.changes {
+    height: 390px;
+}
+.login-form form {
+    transform: translateY(-695px);
+    transition: all 0.3s ease-in-out;
+}
+.login-form.changes form {
+    transform: translateY(45px);
+}
+.login-form.changes .switch-btn {
+    transform: translateY(-662px);
+}
+.switch-btn {
+    width: 100%;
+    height: 400px;
+    background-color: var(--green);
+    border-radius: 200px/50px;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.5s ease-in-out;
+    color: var(--white);
+
+    transform: translateY(-10px);
+}
+.switch-btn button {
+    background-color: transparent;
+    border: none;
+}
+.switch-btn button:hover {
+    text-decoration: underline;
+}
+.header .login-form h3{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: var(--greyblack);
+}
+
+.login-form .box{
+    width: 100%;
+    margin:.7rem 0;
+    background:#eee;
+    border-radius: .5rem;
+    padding:1rem;
+    font-size: 1.6rem;
+    color:var(--greyblack);
+    text-transform: none;
+}
+form {
+    margin: 0 15px;
+}
+form h2 {
+    margin: 5px 0;
+    text-align: center;
+    font-size: 25px;
+    text-transform: uppercase;
+    color: var(--green);
+    font-weight: 800;
+}
+form .input-area {
+    padding: 10px 0;
+}
+form .input-area input, form .input-area textarea {
+    width: 100%;
+    padding: 8px 20px;
+    font-size: 15px;
+    background-color: transparent;
+    caret-color: var(--green);
+    border-radius: 5px;
+    border: 1px solid #bfbfbf;
+    border: 1px solid var(--geryblack);
+    border-bottom-width: 2px;
+    transition: all 0.2s ease;
+}
+form input:focus, form textarea:focus {border-color: var(--green);}
+form .input-area input[type="submit"]{
+    background-color: var(--green);
+    border: 1px solid transparent;
+    color: #ffffff;
+}
+form .input-area input[type="submit"]:hover{
+    background-color: var(--hovergreen);
+}
+form input::placeholder, form textarea::placeholder {
+    color: var(--geryblack);
+}
+form .pass-txt{
+    text-align: left;
+    margin: -10px 0px 15px;
+}
+form .pass-txt a{
+    color: var(--green);
+    text-decoration: none;
+    font-size: 13px;
+}
+form .pass-txt a:hover{
+    text-decoration: underline;
+}
+.header .login-form p{
+    font-size: 1.4rem;
+    padding:.5rem 0;
+    color:var(--light-color);
+}
+
+.header .login-form p a{
+    color:var(--green);
+    text-decoration: underline;
+}
+
+.home-container {
+    line-height: 1.5;
+    padding: 20rem 12rem 10rem;
+    min-height: 100vh;  
+    background: linear-gradient(to right, #ffffffe2 20%, #ffffffc7);
+    height: 100vh;
+    position: relative;
+}
+.home-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://oxford.emory.edu/_includes/images/sections/academics/farm_opener.jpg");
+    background-image: url(images/cow.gif);
+    background-image: url(images/hay.gif);
+    background-image: url(images/sheep.gif);
+    /* background-image: url(images/hay.gif); */
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+}
+.home-container h1 {
+    margin: 25px 10px;
+    font-size: 70px;
+    text-transform: uppercase;
+}
+.home-container p {
+    margin: 0 10px;
+}
+.home-btn {
+    margin: 30px 0;
+}
+input[type="button"] {padding: 15px 0;
+    background-color: var(--darkred);
+    background-color: var(--green);
+    width: 150px;
+    border: 2px solid transparent;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+input[type="button"]::after {
+    content: "";
+    position: absolute;
+
+}
+input[type="button"]:hover {
+    background-color: transparent;
+    width: 150px;
+    border: 2px solid var(--darkred);
+    border: 2px solid var(--green);
+    color: var(--pureblack);
+}
+.label {
+    width: 400px;
+    height: 500px;
+    background-color: rgb(47, 0, 255);
+
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+.label input {
+    padding: 10px;
+    border-radius: 15px;
+    background-color: var(--green);
+    border: 1px solid red;
+    outline: none;
+}
+.footer{
+    background: #fff;
+}
+
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap:1.5rem;
+}
+
+.footer .box-container .box h3{
+    font-size: 2.5rem;
+    color:var(--greyblack);
+    padding: 5px 0;
+}
+
+.footer .box-container .box h3 i{
+    color:var(--green);
+}
+
+.footer .box-container .box .links{
+    display: block;
+    color:var(--light-color);
+    padding: 5px 0;
+}
+
+.footer .box-container .box .links i{
+    color:var(--green);
+    padding-right: .5rem;
+}
+
+.footer .box-container .box .links:hover i{
+    padding-right: 2rem;
+}
+
+
+.footer .box-container .box p{
+    line-height: 1.8;
+    font-size: 1.5rem;
+    color:var(--light-color);
+    padding:1rem 0;
+}
+
+.footer .box-container .box .share a{
+    height:4rem;
+    width:4rem;
+    line-height:4rem;
+    border-radius: .5rem;
+    font-size: 2rem;
+    color:var(--greyblack);
+    margin-right: .2rem;
+    background: #eee;
+    text-align: center;
+}
+
+.footer .box-container .box .share a:hover{
+    background: var(--green);
+    color: #fff;
+}
+
+.footer .box-container .box .email{
+    width: 100%;
+    margin:.7rem 0;
+    padding:1rem;
+    border-radius: .5rem;
+    background-color: var(--white);
+    color:var(--greyblack);
+    text-transform: none;
+}
+
+.footer .box-container .box .payment-img{
+    margin-top: 2rem;
+    height: 3rem;
+    display: block;
+}
+
+.footer .credit{
+    text-align: center;
+    margin-top: 2rem;
+    padding:1rem;
+    padding-top: 2.5rem;
+    font-size: 2rem;
+    color:var(--greyblack);
+    border-top: var(--border);
+}
+
+.footer .credit span{
+    color:var(--green);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* media queries  */
+
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+
+    .header{
+        padding:2rem;
+    }
+
+    section{
+        padding:2rem;
+    }
+
+}
+
+@media (max-width:768px){
+
+    #menu-btn{
+        display: inline-block;
+    }
+
+    .header .search-form{
+        width:90%;
+    }
+
+    .header .navbar{
+        position: absolute;
+        top:110%; right:-110%;
+        width:30rem;
+        box-shadow: var(--box-shadow);
+        border-radius: .5rem;
+        background: #fff;
+    }
+
+    .header .navbar.active{
+        right:2rem;
+        transition: .4s linear;
+    }
+
+    .header .navbar a{
+        font-size: 2rem;
+        margin:2rem 2.5rem;
+        display: block;
+    }
+
+}
+
+@media (max-width:450px){
+
+    html{
+        font-size: 50%;
+    }
+
+    .heading{
+        font-size: 2.5rem;
+    }
+
+    .footer{
+        text-align: center;
+    }
+
+    .footer .box-container .box .payment-img{
+        margin: 2rem auto;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+    color: var(--pureblack);
+    background-color: var(--white);
+}
+.nav-icons li i {
+    color: var(--pureblack);
+}
+
+.header .logo a, ul li a {
+    color: var(--pureblack);
+}
+input[type="button"] {
+    color: var(--white);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===================================== ABOUT US ====================================== */
+.about-us .box-container {
+    padding: 9.5rem;
+}
+.about-us .box-container .box p {
+    text-align: center;
+}
+.about-us .box-container .box ul {
+    margin: 0 25px;
+    list-style: circle;
+    list-style-position: inside;
+}
+.about-us .box-container .box ul li {
+    padding: 0 !important;
+}
+
+/* LATEST PRODUCTS */
+.products .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 45px 10rem;
+}
+.products .box-container .box {
+    width: 300px;
+    width: 285px;
+    height: 320px;
+    overflow: hidden;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 0.5rem 1.5rem rgb(0 0 0 / 10%);
+    border-radius: 0.5rem;
+    border: 0.1rem solid rgba(0,0,0,.1);
+    background-color: #efefef;
+}
+.products .box-container .box .image{
+    overflow:hidden;
+    height: 145px;
+}
+
+.products .box-container .box .image img{
+    width: 100%;
+}
+
+.products .box-container .box:hover .image img{
+    transform: scale(1.1);
+    opacity: 0.6;
+}
+
+.products .box-container .box .image .icons .cart-btn{
+    width:100%;
+}
+
+.products .box-container .box .image .icons a:hover{
+    color:#333;
+}
+.products .box-container .box .content{
+    padding: 15px 0;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(0);
+    background-color: #efefef;
+}
+.box-container .box:hover .content{
+    transform: translateY(-55px);
+}
+.products .box-container .box span {
+    font-size: 15px;
+    padding: 10px 0;
+}
+
+.products .box-container .box .content h3{
+    text-transform: capitalize;
+    font-size: 30px;
+    color: var(--green);
+    color: #00af9d;
+}
+.products .box-container .box .icons{
+    background-color: var(--green);
+    background-color: #00af9d;
+    padding: 5px 0;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.products .box-container .box .icons a{
+    font-size: 18px;
+    color: var(--white);
+    color: #efefef;
+    text-decoration: none;
+}
+.products .box-container .box .icons:hover {
+    background-color: var(--hovergreen);
+    background-color: #0e776c;
+}
+
+.products .box-container .box .content .price span{
+    font-size: 1.5rem;
+    color:#999;
+    font-weight: lighter;
+    text-decoration: line-through;
+}
+.products .show-more {
+    text-align: center;
+    margin: 30px 0;
+}
+.products .show-more a {
+    color: var(--white);
+    background-color: var(--green);
+    border-radius: 10px;
+    padding: 5px 25px;
+}
+.products .show-more a:hover {
+    background-color: var(--hovergreen);
+}

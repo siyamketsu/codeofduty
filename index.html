@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YM Farm | Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="#"><img src="logo/logo.svg" alt="logo"></a>
+        </div>
+
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="contact.html">Contacts</a></li>
+            </ul>
+        </nav>
+
+        <ul class="nav-icons">
+            <div class="fas fa-bars" id="menu-btn"></div>
+            <li><i class="fas fa-search" id="search-btn"></i></li>
+            <li><i class="fas fa-user log-popup" id="login-btn"></i></li>
+            <li><i class="fas fa-shopping-cart" id="cart-btn"></i></li>
+        </ul>
+
+        <form action="" class="search-form">
+            <input type="search" id="search-box" placeholder="search here...">
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+
+        <div class="shopping-cart">
+            <div class="box">
+                <i class="fas fa-trash"></i>
+                <img src="images/farm_opener.jpg" alt="">
+                <div class="content">
+                    <h3>watermelon</h3>
+                    <span class="price">R4.99/-</span>
+                    <span class="quantity">qty : 1</span>
+                </div>
+            </div>
+            <div class="box">
+                <i class="fas fa-trash"></i>
+                <img src="images/farm_opener.jpg" alt="">
+                <div class="content">
+                    <h3>onion</h3>
+                    <span class="price">R4.99/-</span>
+                    <span class="quantity">qty : 1</span>
+                </div>
+            </div>
+            <div class="box">
+                <i class="fas fa-trash"></i>
+                <img src="images/farm_opener.jpg" alt="">
+                <div class="content">
+                    <h3>chicken</h3>
+                    <span class="price">R4.99/-</span>
+                    <span class="quantity">qty : 1</span>
+                </div>
+            </div>
+            <div class="total"> total : R19.69/- </div>
+            <a href="#" class="btn">checkout</a>
+        </div>
+
+        <div class="login-form">        
+            <form action="#" class="bottom-form">
+                <h2>Create account</h2>
+                <div class="input-area">
+                    <input type="email" name="email" id="c-email" placeholder="Email address"/>
+                </div>
+                <div class="input-area">
+                    <input type="password" name="password" id="c-pass" placeholder="Password"/>
+                </div>
+                <div class="input-area">
+                    <input type="password" name="password" id="c-pass2" placeholder="Confirm password"/>
+                </div>
+                <div class="input-area">
+                    <input type="submit" value="Continue">
+                </div>
+            </form>
+
+            <div class="switch-btn">
+                <span>No account? <button class="signup-btn" type="submit">Sign Up</button></span>
+                <span>Have an account? <button class="signin-btn" type="submit">Sign In</button></span>
+            </div>
+
+            <form action="#" class="top-form">
+                <h2>Login</h2>
+                <div class="input-area">
+                    <input type="email" name="email" id="email" placeholder="Email address"/>
+                </div>
+                <div class="input-area">
+                    <input type="password" name="password" id="pass" placeholder="Password"/>
+                </div>
+                <div class="input-area">
+                    <div class="pass-txt"><a href="#">Forgot password?</a></div>
+                    <input type="submit" value="Log In">
+                </div>
+            </form>
+        </div>
+    </header>
+
+    <section class="home-container" id="home">
+        <h1>Sell livestock and fodder here</h1>
+        <p>We help sellers find the buyers all around South Africa 
+            and buyers who need to buy Cattles, Hay and Straws throughout 
+            our plartform. All you need to do is to simple login into our 
+            plartform and create a discriptive for sale listing complete with 
+            photos and all the necessary details
+            </p>
+        <div class="home-btn">
+            <input id="sell" type="button" value="Sell Cattle">
+            <!-- <button class="log-popup" type="button">Login</button> -->
+            <input id="buy" type="button" value="Buy Cattle">
+        </div>
+
+        <div class="sell-buy-form">
+            <div class="sell-buy">
+                <span class="log-close">&times;</span>
+                <form action="#" class="bottom-form">
+                    <h2>Sell</h2>
+                    <div class="input-area fname">
+                        <input type="text" name="fname" id="fname" placeholder="Name"/>
+                        <!-- <small class="error error-txt">Email can't be blank</small> -->
+                    </div>
+                    <div class="input-area lname">
+                        <input type="text" name="lname" id="lname" placeholder="Surname"/>
+                        <!-- <small class="error error-txt">Email can't be blank</small> -->
+                    </div>
+                    <div class="input-area mail">
+                        <input type="email" name="email" id="sell-email" placeholder="Email address"/>
+                        <!-- <small class="error error-txt">Email can't be blank</small> -->
+                    </div>
+                    <div class="input-area pnumber">
+                        <input type="tel" name="tel" id="tel" placeholder="Phone number"/>
+                        <!-- <small class="error error-txt">Email can't be blank</small> -->
+                    </div>
+
+                    <div class="input-area radio-que">
+                        <span>What do you want to sell?</span>
+                    </div>
+
+                    <div class="input-area radio-btn">
+                        <div class="radio-category">
+                            <input type="radio" name="category" id="livestock" checked><label for="livestock">Livestock</label>
+                        </div>
+                        <div class="radio-category">
+                            <input type="radio" name="category" id="hay"><label for="hay">Hay</label>
+                        </div>
+                    </div>
+                    <div class="input-area">
+                        <input type="text" name="" id="pricing" placeholder="Price">
+                        <!-- <small class="error error-txt">Email can't be blank</small> -->
+                    </div>
+                    <div class="input-area .category1">
+                        <input type="search" name="search" id="location-search" placeholder="Search your location here">
+                        <!-- <small class="error error-txt">Email can't be blank</small> -->
+                    </div>
+
+                    <div class="input-area drop-box">
+                        <i class="fa fa-cloud-upload"></i>
+                        <input type="file" name="file-input" id="upload" hidden="">
+                        <label class="upload-file" for="upload">Drag &amp; Drop or <span>Upload</span></label>
+                        <!-- <small class="error error-txt">Email can't be blank</small> -->
+                    </div>
+                    <div class="input-area sub-btn">
+                        <input type="submit" value="Continue">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <h1 class="heading"> latest <span>Products</span> </h1>    
+        <div class="box-container">    
+            <div class="box">
+                <div class="image">
+                    <img src="hay/img-1.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3 class="name-category">Hay</h3>
+                    <span class="price">Price: R150.00</span>
+                    <span class="location"><i class="fas fa-map-marker-alt"></i> 113 folokhwe cres</span>
+                    <div class="icons">
+                        <a href="#" class="cart-btn">add to cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="cattle/img-3.png" alt="">
+                </div>
+                <div class="content">
+                    <h3 class="name-category">Cow</h3>
+                    <span class="price">Price: R14 600.00</span>
+                    <span class="location"><i class="fas fa-map-marker-alt"></i> 113 folokhwe cres</span>
+                    <div class="icons">
+                        <a href="#" class="cart-btn">add to cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="hay/img-2.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h3 class="name-category">Hay</h3>
+                    <span class="price">Price: R240.00</span>
+                    <span class="location"><i class="fas fa-map-marker-alt"></i> 113 folokhwe cres</span>
+                    <div class="icons">
+                        <a href="#" class="cart-btn">add to cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="cattle/img-2.png" alt="">
+                </div>
+                <div class="content">
+                    <h3 class="name-category">Cow</h3>
+                    <span class="price">Price: R16 200.00</span>
+                    <span class="location"><i class="fas fa-map-marker-alt"></i> 113 folokhwe cres</span>
+                    <div class="icons">
+                        <a href="#" class="cart-btn">add to cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="show-more">
+            <a class="show-more" href="products.html">Show more</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3> Livestock<i class="fas fa-shopping-basket"></i> </h3>
+                <p>Find us othe following social medias</p>
+                <div class="share">
+                    <a href="#" class="fab fa-facebook-f"></a>
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                    <a href="#" class="fab fa-linkedin"></a>
+                </div>
+            </div>
+
+            <div class="box">
+                <h3>Contact Info</h3>
+                <a href="#" class="links"> <i class="fas fa-phone"></i>021 456 7890</a>
+                <a href="#" class="links"> <i class="fas fa-phone"></i>087 123 4567</a>
+                <a href="#" class="links"> <i class="fas fa-envelope"></i>Livestock.younglings.africa</a>
+                <a href="#" class="links"> <i class="fas fa-map-marker-alt"></i>31 Lower long, Cape Town, 8001</a>
+            </div>
+
+            <div class="box">
+                <h3>Quick Links</h3>
+                <a href="index.html" class="links"> <i class="fas fa-arrow-right"></i>Home</a>
+                <a href="about.html" class="links"> <i class="fas fa-arrow-right"></i>Products</a>
+                <a href="products.html" class="links"> <i class="fas fa-arrow-right"></i>About us</a>
+                <a href="contact.html" class="links"> <i class="fas fa-arrow-right"></i>Contact us</a>
+            </div>
+
+            <div class="box">
+                <h3>Newsletter</h3>
+                <p>Subscribe for latest updates</p>
+                <input type="email" placeholder="Your Email" class="email">
+                <input type="submit" value="subscribe" class="btn">
+            </div>
+        </div>
+
+        <div class="credit"> Created by <span> Mr. S Mketsu & Mr. L yabo </span> | © 2022 all rights reserved </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
