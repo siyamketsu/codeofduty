@@ -140,12 +140,12 @@ ul li a:hover, ul li i:hover{
     border:.2rem solid var(--greyblack);
     color:var(--greyblack);
     cursor: pointer;
-    background-color: var(--white);
+    background-color: var(--green);
+    color: var(--white)
 }
 
 .btn:hover{
-    background: var(--green);
-    color:#fff;
+    background: var(--hovergreen);
 }
 
 .header .icons div:hover{
@@ -416,8 +416,11 @@ form .sub-btn {
     display: block;
     text-align: center;
     margin:1rem;
+    background-color: var(--green);
 }
-
+.shopping-cart .btn:hover{
+    background-color: var(--hovergreen);
+}
 /* =================================== LOGIN/SIGN UP FORM ==================================== */
 /* .sell-buy-form, */
 .login-form {
