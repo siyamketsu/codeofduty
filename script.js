@@ -77,3 +77,20 @@ showForm.onclick = function (){
 hideForm.onclick = function (){
     sellForm.style.display = "none";
 }
+
+
+//TOGGLE LIVESTOCK AND HAY
+let chan = document.querySelector(".me");
+let chan2 = document.querySelector(".you");
+let lab = document.querySelector(".listing-box");
+
+chan.onclick = chan2.onclick = (e) => {
+    if (lab.classList.contains("shift")) {
+        lab.classList.remove("shift");
+        lab.classList.add("shift2");
+    }
+    else {
+        lab.classList.add("shift");
+        lab.classList.remove("shift2");
+    }
+}
