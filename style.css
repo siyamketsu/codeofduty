@@ -10,9 +10,15 @@
     --white: #f5f5f5;
     --geryblack: #222323;
     --light-color:#666;
-    --border:.2rem solid var(--border-color);
-    --outline:.1rem solid var(--border-color);
-    --outline-hover:.2rem solid var(--greyblack);
+    --border: .2rem solid var(--border-color);
+    --outline: .1rem solid var(--border-color);
+    --outline-hover: .2rem solid var(--greyblack);
+
+    --pureblack: #000000;
+    --puregrey: #d5d5d5;
+    --white: #ffffff;
+    --bg-input: #8d8d8d14;
+    --bg-white: #f5f5f5;
 }
 
 *{
@@ -22,8 +28,10 @@
     outline: none; border:none;
     text-decoration: none;
     font-size: 15px;
-    transition: all .2s linear;
     resize: none;
+
+
+    scrollbar-width: thin;
 }
 
 html{
@@ -176,21 +184,25 @@ ul li a:hover, ul li i:hover{
 }
 
 /* ------------------------------------------------ Try sell form ------------------------------*/
-.sell-buy-form {
-    width: 380px;
-    overflow: hidden;
-    background-color: var(--white);
-    border-radius: 10px;
-    box-shadow: 10px 10px 15px rgba(0,0,0,0.1);
-    transition: 0.5s;
-    padding: 15px;
-
-    margin: -41.3rem auto;
+.pop-sell {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    left: 0px;
+    top: 0px;
+    /* visibility: hidden; */
+    background-color: rgba(0, 0, 0, 0.669);
     display: none;
-    position: relative;
+    z-index: 10;
 }
-.sell-buy-form {
-    width: 760px;
+.sell-form {
+    width: 730px;
+    left: calc(50% - 365px);
+    position: absolute;
+    top: 18rem;
+    background-color: var(--bg-white);
+    /* opacity: 0; */
+    /* transition: opacity 1.3s; */
 }
 .log-close {
     position: absolute;
@@ -200,22 +212,286 @@ ul li a:hover, ul li i:hover{
     z-index: 2;
     cursor: pointer;
 }
+.expand h2 {
+    color: var(--white);
+    cursor: pointer;
+  }
+  .expand label{
+    display: block;
+    background-color: var(--green);
+    padding: 6px 15px;
+    font-size: 20px;
+  }
+  .expand .form {
+    height: 0;
+    transition: 0.5s;
+    overflow: hidden;
+  }
+  .expand > input[name="collapse"]:checked ~ .form {
+    height: 170px;
+    /* height: 365px; */
+    transition: height 0.5s;
+  }
+  .expand > input[id="handle1"]:checked ~ .form {
+    height: 102px;
+    height: 170px;
+    transition: height 0.5s;
+    /* background-color: #ff0088; */
+  }
+  .expand > input[id="handle3"]:checked ~ .form {
+    height: 102px;
+    height: 307px;
+    /* height: 400px; */
+    /* height: 155px; */
+    transition: height 0.5s;
+    /* background-color: #c7affff1; */
+  }
+  .expand form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+    padding-top: 15px;
+    /* height: 0; */
+    transition: 0.5s;
+  }
+  .contact-det {
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        "name name"
+        "mail numb";
+  }
+  .live-det {
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        "name name"
+        "numb mail"
+        "location price";
+  }
+  .upload-det {
+    grid-template-rows: 1fr 8fr 1fr;
+    grid-template-rows: 0.5fr 4fr 1fr;
+    grid-template-areas:
+    "format format"
+    "drop preview"
+    "sellBtn sellBtn";
+  }
+  .input-field.fname {
+    grid-area: name;
+    display: flex;
+    gap: 15px;
+  }
+  .input-field.mail {
+    grid-area: mail;
+  }
+  .input-field.number {
+    grid-area: numb;
+  }
+  .input-field.location {
+    grid-area: location;
+  }
+  .input-field.price {
+    grid-area: price;
+    background: linear-gradient();
+  }
+  .input-field.drop-box, .input-field.file-preview {
+    grid-area: drop;
+    height: 172px;
+    /* border: 2px solid var(--green); */
+  }
+.input-field.sell-btn {
+    grid-area: sellBtn;
+}
+  .input-field.drop-box .upload-file {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--puregrey);
+  }
+  .input-field.drop-box {
+    grid-area: drop;
+  }
+  .input-field.file-preview {
+    grid-area: preview;
+  }
+  
+  .input-field.format {
+    grid-area: format;
+  }
+  .input-field.drop-box label, .input-field.file-preview label {
+      background-color: transparent;
+  }
+  .input-field input, .input-field textarea, .input-field select {
+    width: 100%;
+    background-color: var(--bg-input);
+    border-bottom: 1px solid var(--green);
+    border-bottom: 1px solid var(--pureblack);
+    color: var(--pureblack);
+  }
+  .input-field select {
+    padding: 10px 10px;
+  }
+  .input-field input, .input-field textarea {
+    padding: 10px 15px;
+  }
+  .input-field input::placeholder {
+    color: var(--pureblack);
+  }
+  .upload-info {
+    font-size: 14px;
+    overflow-y: scroll;
+    height: 172px;
+  
+    border-bottom: 2px solid var(--puregrey);
+  }
+  
+  .upload-info li {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--puregrey);
+    margin-bottom: 3px;
+    padding: 1px 10px;
+    transition: all 0.5s ease-in-out;
+    height: 40px;
+  }
+  .upload-info li:hover {
+    background-color: var(--hovergreen);
+    border-color: var(--white);
+    color: var(--white);
+  }
+  .upload-info li:hover span.filesize {
+    color: var(--bg-white);
+  }
+  .upload-info li .name-size, .status {
+    display: flex;
+    flex-direction: column;
+  }
+  .upload-info li span.filesize {
+      font-size: 12px;
+      color: var(--geryblack);
+      transition: all 0.5s ease-in-out;
+  }
+  .upload-info li .remove {
+    background-color: var(--border-color);
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    transform: rotate(45deg);
+    margin: 9px;
+    transition: all 0.5s ease-in-out;
+    outline: 2px solid var(--geryblack);
+  }
+  .upload-info li .remove:hover {
+    background: var(--geryblack);
+  }
+  .upload-info li .remove .cross, .cross::after {
+    background: #ffffff;
+    width: 14px;
+    height: 2px;
+  }
+  .upload-info li .remove .cross {
+    position: relative;
+    top: 10px;
+    left: 4px;
+  }
+  .upload-info li .remove .cross::after { 
+    content: "";
+      position: absolute;
+      background: #ffffff;
+      transform: rotate(90deg);
+  }
+  /* SWITCH BUTTON */
+.change {
+    padding: 10px 15px;
+  }
+  .switches-container {
+    width: 25rem;
+    width: 100%;
+    position: relative;
+    display: flex;
+    background-color: transparent;
+    line-height: 30px;
+    border-radius: 3rem;
+    margin: auto;
+    border: 2px solid var(--bg-black);
+    border: 2px solid  var(--green);
+    margin: 13px auto;
+  }
+  .sell-form input[type="radio"] {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+  }
+  .switches-container label {
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+    color: var(--white);
+    color: var(--bg-black);
+  }
+  .switch-wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    z-index: 3;
+    transition: transform .5s cubic-bezier(.77, 0, .175, 1);
+    /* transition: transform 1s; */
+  }
+  .switch {
+    border-radius: 3rem;
+    background: var(--white);
+    background: var(--bg-black);
+    background-color: var(--green);
+    height: 100%;
+  }
+  .switch div {
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    display: block;
+    /* color: var(--green); */
+    color: var(--white);
+    transition: opacity .2s cubic-bezier(.77, 0, .175, 1) .125s;
+    will-change: opacity;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .switches-container input:nth-of-type(1):checked~.switch-wrapper {
+    transform: translateX(0%);
+  }
+  .switches-container input:nth-of-type(2):checked~.switch-wrapper {
+    transform: translateX(100%);
+  }
+  .switches-container input:nth-of-type(1):checked~.switch-wrapper .switch div:nth-of-type(1) {
+    opacity: 1;
+  }
+  .switches-container input:nth-of-type(2):checked~.switch-wrapper .switch div:nth-of-type(2) {
+    opacity: 1;
+  }
+/* 
 .contact-us .box-container {
     display: grid;
     flex-wrap: initial;
     justify-content: initial;
 }
-.sell-buy-form form, .contact-us .box-container form {
+.pop-sell form, .contact-us .box-container form {
     display: grid;
     grid-gap: 0 30px;
     grid-template-columns: 1fr 1fr;
 }
-.sell-buy-form form {
+.pop-sell form {
     grid-template-rows: 0.2fr 0.2fr 0.2fr 0.2fr 0.4fr 0.2fr;
     grid-template-areas: "h2 h2"
     "fname lname"
     "mail pnumber"
     "radio-que radio"
+    "animFeed animFeed"
     "category1 category2"
     "drop drop"
     "btn btn"
@@ -229,8 +505,11 @@ ul li a:hover, ul li i:hover{
     "msg msg"
     "btn btn";
 }
-.sell-buy-form form h2, .contact-us .box-container form h1 {
+.pop-sell form h2, .contact-us .box-container form h1 {
     grid-area: h2;
+}
+form .listing-form {
+    grid-area: animFeed;
 }
 form .radio-que {
     grid-area: radio-que;
@@ -239,14 +518,12 @@ form .radio-btn {
     grid-area: radio;
     display: flex;
     justify-content: space-between;
-}
-.radio-btn input[type="radio"] {
+} */
+/* .radio-btn input[type="radio"] {
     padding: 0px !important;
     appearance: none;
-    /* For iOS < 15 */
     background-color: var(--form-background);
     background-color: var(--white);
-    /* Not removed via appearance */
     margin: 0;
   
     font: inherit;
@@ -268,7 +545,6 @@ form .radio-btn {
     transform: scale(0);
     transition: 120ms transform ease-in-out;
     box-shadow: inset 1em 1em #000000; 
-    /* Windows High Contrast Mode */
     background-color: CanvasText;
 }
 .radio-btn input[type="radio"]:checked, .radio-btn input[type="radio"]:checked + label {
@@ -336,7 +612,7 @@ form .msg {
 }
 form .sub-btn {
     grid-area: btn;
-}
+} */
 /* ----------------------------------------- End Try sell form ---------------------------------- */
 .search-form.active, .shopping-cart.active, .login-form.active {
     transition: .3s linear;
@@ -425,7 +701,6 @@ form .sub-btn {
     background-color: var(--hovergreen);
 }
 /* =================================== LOGIN/SIGN UP FORM ==================================== */
-/* .sell-buy-form, */
 .login-form {
     text-align: center;
     height: 350px;
@@ -493,10 +768,10 @@ form h2 {
     color: var(--green);
     font-weight: 800;
 }
-form .input-area {
+.login-form form .input-field {
     padding: 10px 0;
 }
-form .input-area input, form .input-area textarea {
+/* form .input-field input, form .input-field textarea {
     width: 100%;
     padding: 8px 20px;
     font-size: 15px;
@@ -507,14 +782,13 @@ form .input-area input, form .input-area textarea {
     border: 1px solid var(--geryblack);
     border-bottom-width: 2px;
     transition: all 0.2s ease;
-}
-form input:focus, form textarea:focus {border-color: var(--green);}
-form .input-area input[type="submit"]{
+} */
+form .input-field input[type="submit"]{
     background-color: var(--green);
     border: 1px solid transparent;
     color: #ffffff;
 }
-form .input-area input[type="submit"]:hover{
+form .input-field input[type="submit"]:hover{
     background-color: var(--hovergreen);
 }
 form input::placeholder, form textarea::placeholder {
@@ -559,13 +833,11 @@ form .pass-txt a:hover{
     width: 100%;
     height: 100%;
     background-image: url("https://oxford.emory.edu/_includes/images/sections/academics/farm_opener.jpg");
-    background-image: url(images/cow.gif);
-    background-image: url(images/hay.gif);
     background-image: url(images/sheep.gif);
-    /* background-image: url(images/hay.gif); */
     background-position: center;
     background-size: cover;
     z-index: -1;
+    /* filter: blur(4px); */
 }
 .home-container h1 {
     margin: 25px 10px;
@@ -817,7 +1089,7 @@ input[type="button"]:hover {
 
 body {
     color: var(--pureblack);
-    background-color: var(--white);
+    background-color: var(--bg-white);
 }
 .nav-icons li i {
     color: var(--pureblack);

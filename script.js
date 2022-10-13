@@ -49,48 +49,6 @@ window.addEventListener('scroll', function () {
     navScroll.classList.toggle('scroll-active', navOnScroll);
   })
 
-// var swiper = new Swiper(".product-slider", {
-//     loop:true,
-//     spaceBetween: 20,
-//     autoplay: {
-//         delay: 7500,
-//         disableOnInteraction: false,
-//     },
-//     centeredSlides: true,
-//     breakpoints: {
-//       0: {
-//         slidesPerView: 1,
-//       },
-//       768: {
-//         slidesPerView: 2,
-//       },
-//       1020: {
-//         slidesPerView: 3,
-//       },
-//     },
-// });
-
-// var swiper = new Swiper(".review-slider", {
-//     loop:true,
-//     spaceBetween: 20,
-//     autoplay: {
-//         delay: 7500,
-//         disableOnInteraction: false,
-//     },
-//     centeredSlides: true,
-//     breakpoints: {
-//       0: {
-//         slidesPerView: 1,
-//       },
-//       768: {
-//         slidesPerView: 2,
-//       },
-//       1020: {
-//         slidesPerView: 3,
-//       },
-//     },
-// });
-
 
 
 
@@ -110,10 +68,11 @@ let showForm = document.querySelector("#sell");
 let hideForm = document.querySelector(".log-close");
 
 
-let sellForm = document.querySelector(".sell-buy-form");
+let sellForm = document.querySelector(".pop-sell");
 
 showForm.onclick = function (){
     sellForm.style.display = "block";
+    document.body.classList.add('salmon');
 }
 hideForm.onclick = function (){
     sellForm.style.display = "none";
